@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: wpversion exchange point
-Plugin URI: http://wpversion.com/plugin
-Description: Provides information about current version to wpversion.com
+Plugin Name: WordPress Version API
+Plugin URI: http://github.com/koke/wpversion-plugin
+Description: Provides an API to fetch information about current version
 Version: 0.1
 Author: Jorge Bernal
 Author URI: http://www.jorgebernal.info/
