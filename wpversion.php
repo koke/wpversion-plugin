@@ -81,12 +81,26 @@ function wpv_ok($msg)
   echo "OK: $msg";
 }
 
+function wpv_version_parse() {
+	include(ABSPATH . 'wp-includes/version.php');
+	return $wp_version;
+}
+
+function wpv_version() {
+    global $wp_version;
+
+	if ($wp_version == 'abc') {
+		return wpv_version_parse();
+	} else {
+		return $wp_version;
+	}
+}
+
 function wpv_action() {
   $authkey = get_option('wpv_key');
   $action = $_GET["action"];
   
   if ($action == "check") {
-    global $wpv_version;
     wpv_ok($wpv_version);
   } else {
     $key = $_GET["key"];
@@ -97,8 +111,7 @@ function wpv_action() {
     } else {
       switch ($action) {
         case 'version':
-          global $wp_version;
-          wpv_ok($wp_version);
+          wpv_ok(wpv_version());
           break;
         
         default:
