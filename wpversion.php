@@ -101,6 +101,7 @@ function wpv_action() {
   $action = $_GET["action"];
   
   if ($action == "check") {
+    global $wpv_version;
     wpv_ok($wpv_version);
   } else {
     $key = $_GET["key"];
